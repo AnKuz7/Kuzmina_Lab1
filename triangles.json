@@ -1,0 +1,128 @@
+[
+  {
+    "border-color": "Yellow",
+    "field-color": "Red",
+    "points": [
+      {
+        "color": "Black",
+        "coordinates": [0,1]
+      },
+      {
+        "color": "Black",
+        "coordinates": [1,0]
+      },
+      {
+        "color": "Black",
+        "coordinates": [1,1]
+      }
+    ]
+  },
+  {
+    "border-color": "Brown",
+    "field-color": "Brown",
+    "points": [
+      {
+        "color": "Maroon",
+        "coordinates": [0,1]
+      },
+      {
+        "color": "Blue",
+        "coordinates": [1,0]
+      },
+      {
+        "color": "Chocolate",
+        "coordinates": [0,0]
+      }
+    ]
+  },
+  {
+    "border-color": "Violet",
+    "field-color": "Magenta",
+    "points": [
+      {
+        "color": "Magenta",
+        "coordinates": [0,1]
+      },
+      {
+        "color": "Magenta",
+        "coordinates": [0,2]
+      },
+      {
+        "color": "Violet",
+        "coordinates": [0,3]
+      }
+    ]
+  },
+  {
+    "border-color": "White",
+    "field-color": "White",
+    "points": [
+      {
+        "color": "White",
+        "coordinates": [10,10]
+      },
+      {
+        "color": "White",
+        "coordinates": [10,0]
+      },
+      {
+        "color": "White",
+        "coordinates": [0,10]
+      }
+    ]
+  },
+  {
+    "border-color": "Black",
+    "field-color": "White",
+    "points": [
+      {
+        "color": "Black",
+        "coordinates": [5,5]
+      },
+      {
+        "color": "Black",
+        "coordinates": [1,5]
+      },
+      {
+        "color": "Black",
+        "coordinates": [5,2]
+      }
+    ]
+  },
+  {
+    "border-color": "Lime",
+    "field-color": "Lime",
+    "points": [
+      {
+        "color": "Green",
+        "coordinates": [7,1]
+      },
+      {
+        "color": "Yellow",
+        "coordinates": [2,2]
+      },
+      {
+        "color": "Aqua",
+        "coordinates": [6,10]
+      }
+    ]
+  },
+  {
+    "border-color": "Gray",
+    "field-color": "Silver",
+    "points": [
+      {
+        "color": "Black",
+        "coordinates": [5,0]
+      },
+      {
+        "color": "Black",
+        "coordinates": [0,1]
+      },
+      {
+        "color": "Black",
+        "coordinates": [10,1]
+      }
+    ]
+  }
+]

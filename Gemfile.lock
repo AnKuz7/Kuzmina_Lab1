@@ -1,0 +1,46 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.1)
+    parallel (1.19.2)
+    parser (2.7.1.5)
+      ast (~> 2.4.1)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    rainbow (3.0.0)
+    regexp_parser (1.8.1)
+    rexml (3.2.4)
+    rubocop (0.92.0)
+      parallel (~> 1.10)
+      parser (>= 2.7.1.5)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.7)
+      rexml
+      rubocop-ast (>= 0.5.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-ast (0.7.1)
+      parser (>= 2.7.1.5)
+    ruby-progressbar (1.10.1)
+    tty-color (0.5.2)
+    tty-cursor (0.7.1)
+    tty-prompt (0.22.0)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.8.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.1)
+    unicode-display_width (1.7.0)
+    wisper (2.0.1)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  rubocop (~> 0.92.0)
+  tty-prompt (~> 0.22.0)
+
+BUNDLED WITH
+   2.1.4
