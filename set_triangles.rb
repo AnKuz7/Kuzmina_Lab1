@@ -22,7 +22,7 @@ class SetTriangles
   def print_triangles
     str = ''
     @triangles.each_with_index do |tr, index|
-      str = "#{str} [Треугольник #{index + 1}: #{tr}]"
+      str = "#{str} \n Треугольник #{index + 1}: #{tr}"
     end
     str
   end
@@ -39,8 +39,12 @@ class SetTriangles
     @triangles.select { |tr| tr.field_color.downcase == color.downcase }
   end
 
+  def filter_by_point_color(color)
+    @triangles.select { |tr| tr.is_color_point(color) }
+  end
+
   def perimeter_filter(up_s, down_s)
-    @triangles.select { |tr| perimeter(tr.points) > down_s and perimeter(tr.points) < up_s }
+    @triangles.select { |tr| tr.perimeter > down_s and tr.perimeter < up_s }
   end
 
   def triangle_filter; end
@@ -48,7 +52,7 @@ class SetTriangles
   def number_of_triangles_inside_rect; end
 
   def sort_by_area
-    @triangles.sort { |tr| area(tr) }
+    @triangles.sort { |tr| tr.area }
   end
 
   def sort_by_bottom_left_top; end
@@ -57,24 +61,4 @@ class SetTriangles
 
   def color_statistics; end
 
-  private
-
-  def side(point1, point2)
-    Math.sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
-  end
-
-  def perimeter(points)
-    a = side(points[0].coordinates, points[1].coordinates)
-    b = side(points[1].coordinates, points[2].coordinates)
-    c = side(points[2].coordinates, points[0].coordinates)
-    (a + b + c) / 2
-  end
-
-  def area(trian)
-    a = side(trian.points[0].coordinates, trian.points[1].coordinates)
-    b = side(trian.points[1].coordinates, trian.points[2].coordinates)
-    c = side(trian.points[2].coordinates, trian.points[0].coordinates)
-    p = perimeter(trian.points)
-    Math.sqrt(p * (p - a) * (p - b) * (p - c))
-  end
 end

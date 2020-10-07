@@ -9,4 +9,8 @@ class Point
     @color = color
     @coordinates = coordinates
   end
+
+  def to_s
+    "цвет: #{@color}, координаты: #{@coordinates}"
+  end
 end

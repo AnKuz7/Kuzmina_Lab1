@@ -60,10 +60,10 @@ module DialogueUser
   end
 
   def self.ch_3(triangles, prompt)
-    color = prompt.ask('Введите цвет', default: 'silver') do |q|
+    color = prompt.ask('Введите цвет', default: 'black') do |q|
       q.modify :strip, :collapse
     end
-    puts triangles.filter_by_field_color(color)
+    puts triangles.filter_by_point_color(color)
   end
 
   def self.ch_4(triangles, prompt)
