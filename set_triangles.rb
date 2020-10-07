@@ -52,7 +52,7 @@ class SetTriangles
   def number_of_triangles_inside_rect; end
 
   def sort_by_area
-    @triangles.sort { |tr| tr.area }
+    @triangles.sort_by { |tr| tr.area }
   end
 
   def sort_by_bottom_left_top; end
