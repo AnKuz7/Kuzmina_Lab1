@@ -60,10 +60,10 @@ module DialogueUser
   end
 
   def self.ch_3(triangles, prompt)
-    color = prompt.ask('Введите цвет', default: 'silver') do |q|
+    color = prompt.ask('Введите цвет', default: 'black') do |q|
       q.modify :strip, :collapse
     end
-    puts triangles.filter_by_field_color(color)
+    puts triangles.filter_by_point_color(color)
   end
 
   def self.ch_4(triangles, prompt)
@@ -76,17 +76,51 @@ module DialogueUser
     puts triangles.perimeter_filter(up, down)
   end
 
-  def self.ch_5(triangles, prompt); end
+  def self.ch_5(triangles, prompt)
+    choices = ['точки на прямой', 'прямоугольный', 'тупоугольный', 'остроугольный']
+    choice = prompt.enum_select('Выберете тип треугольника', choices)
+    puts triangles.triangle_filter(choice)
+  end
 
-  def self.ch_6(triangles, prompt); end
+  def self.ch_6(triangles, prompt)
+    rect_x = prompt.ask('Введите координату x нижней левой вершины прямоугольника',
+                        default: '0', convert: :int) do |q|
+      q.convert(:int, 'Вы ввели не целое число!')
+    end
+    rect_y = prompt.ask('Введите координату y нижней левой вершины прямоугольника',
+                        default: '0', convert: :int) do |q|
+      q.convert(:int, 'Вы ввели не целое число!')
+    end
+    width = prompt.ask('Введите ширину прямоугольника', default: '5', convert: :int) do |q|
+      q.convert(:int, 'Вы ввели не целое число!')
+    end
+    height = prompt.ask('Введите высоту прямоугольника', default: '5', convert: :int) do |q|
+      q.convert(:int, 'Вы ввели не целое число!')
+    end
+    puts "Кол-во: #{triangles.number_of_triangles_inside_rect([rect_x, rect_y], width, height)}"
+  end
 
   def self.ch_7(triangles, _prompt)
     puts triangles.sort_by_area
   end
 
-  def self.ch_8(triangles, _prompt); end
+  def self.ch_8(triangles, _prompt)
+    puts triangles.sort_by_bottom_left_point
+  end
 
-  def self.ch_9(triangles, prompt); end
+  def self.ch_9(triangles, _prompt)
+    all_pairs = triangles.search_for_pairs_with_common_point
+    all_pairs.each_with_index do |pair, ind|
+      puts "Пара №#{ind + 1}: #{pair[0]}, #{pair[1]}"
+      puts ''
+    end
+  end
 
-  def self.ch_10(triangles, prompt); end
+  def self.ch_10(triangles, _prompt)
+    statistics = triangles.color_statistics
+    statistics.each do |st|
+      puts "Цвет: #{st[:color]}, цвет границы: #{st[:border_color]}," \
+        "цвет заливки: #{st[:field_color]}, цвет вершин #{st[:point_color]}"
+    end
+  end
 end
