@@ -39,9 +39,11 @@ class SetTriangles
     @triangles.select { |tr| tr.field_color.downcase == color.downcase }
   end
 
-  def perimeter_filter(up_s, down_s); end
+  def perimeter_filter(up_s, down_s)
+    @triangles.select { |tr| perimeter(tr.points) > down_s and perimeter(tr.points) < up_s } 
+  end
 
-  def triangle_filter(color); end
+  def triangle_filter; end
 
   def number_of_triangles_inside_rect; end
 
@@ -49,9 +51,7 @@ class SetTriangles
     @triangles.sort { |tr| area(tr) }
   end
 
-  def sort_by_bottom_left_top
-    @triangles.sort { |tr| bottom_left_top(tr.points) }
-  end
+  def sort_by_bottom_left_top; end
 
   def search_for_pairs_with_common_vertex; end
 
