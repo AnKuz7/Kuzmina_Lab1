@@ -49,11 +49,9 @@ class Triangle
     Math.sqrt(p * (p - a) * (p - b) * (p - c))
   end
 
-  def is_color_point(color)
+  def color_point?(color)
     @points.each do |point|
-      if point.color.downcase == color.downcase
-        return true
-      end
+      return true if point.color.downcase == color.downcase
     end
     false
   end

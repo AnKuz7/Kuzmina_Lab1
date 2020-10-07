@@ -40,7 +40,7 @@ class SetTriangles
   end
 
   def filter_by_point_color(color)
-    @triangles.select { |tr| tr.is_color_point(color) }
+    @triangles.select { |tr| tr.color_point?(color) }
   end
 
   def perimeter_filter(up_s, down_s)
@@ -60,5 +60,4 @@ class SetTriangles
   def search_for_pairs_with_common_vertex; end
 
   def color_statistics; end
-
 end
