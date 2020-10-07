@@ -40,7 +40,7 @@ class SetTriangles
   end
 
   def perimeter_filter(up_s, down_s)
-    @triangles.select { |tr| perimeter(tr.points) > down_s and perimeter(tr.points) < up_s } 
+    @triangles.select { |tr| perimeter(tr.points) > down_s and perimeter(tr.points) < up_s }
   end
 
   def triangle_filter; end
